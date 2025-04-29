@@ -1,7 +1,10 @@
 let cookie = document.cookie;
 let storage = { ...localStorage };
+
 document.write(`<h1>Cookie:</h1><pre>${cookie}</pre>`);
-document.write(`<h1>LocalStorage:</h1><pre>${storage}</pre>`);
+document.write(
+  `<h1>LocalStorage:</h1><pre>${JSON.stringify(storage, null, 2)}</pre>`
+);
 
 let preferencesURL = "https://api.vimeo.com/me/preferences?fields=tves,dai";
 async function fetchPreferences() {
