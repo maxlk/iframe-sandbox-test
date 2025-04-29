@@ -9,7 +9,7 @@ document.write(
 let preferencesURL = "https://api.vimeo.com/me/preferences?fields=tves,dai";
 async function fetchPreferences() {
   const response = await fetch(preferencesURL);
-  if (responce.ok) {
+  if (response.ok) {
     const data = await response.json();
     document.getElemetsByClassName(
       "HTML"
