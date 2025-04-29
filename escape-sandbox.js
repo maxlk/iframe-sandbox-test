@@ -6,7 +6,7 @@ document.write(
   `<h1>LocalStorage:</h1><pre>${JSON.stringify(storage, null, 2)}</pre>`
 );
 
-let preferencesURL = "https://api.vimeo.com/me/preferences?fields=tves,dai";
+let preferencesURL = "https://api.vimeo.com/me/preferences";
 async function fetchPreferences() {
   const response = await fetch(preferencesURL);
   if (response.ok) {
@@ -22,7 +22,7 @@ async function fetchPreferences() {
     const error = await response.text();
     document.getElementsByTagName(
       "HTML"
-    )[0].innerHTML += `<h1>Error fetching preferences</h1><pre>${response.status} ${response.statusText} ${error}</pre>`;
+    )[0].innerHTML += `<h1>Error fetching ${preferencesURL}</h1><pre>${response.status} ${response.statusText} ${error}</pre>`;
   }
 }
 
